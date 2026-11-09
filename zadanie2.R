@@ -1,0 +1,8 @@
+#jakie są trzy najwyżej oceniane komedie dostępne w języku polskim?
+
+dane %>%
+  filter(str_detect(Genre, "Comedy")) %>%
+  filter(str_detect(Languages, "Polish")) %>%
+  arrange(desc(IMDb.Score)) %>%
+  select(Title, Genre, Languages, IMDb.Score) %>%
+  head(3)
