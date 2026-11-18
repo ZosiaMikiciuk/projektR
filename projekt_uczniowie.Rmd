@@ -1,0 +1,33 @@
+---
+title: "projekt"
+output: html_document
+date: "2026-11-18"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(naniar)
+dane <- read.csv("student_exam_performance.csv", sep=",")
+```
+
+# Wprowadzenie 
+tutaj opisać wprowadzenie co i jak 
+cel analizy, uzyte dane
+
+# Porządkowanie i czyszczenie danych
+
+## Braki danych 
+
+```{r}
+vis_miss(dane, warn_large_data = FALSE)
+```
+
+```{r}
+gg_miss_fct(dane, fct = gender) #rozkładam na czynniki pierwsze
+```
+
+```{r}
+gg_miss_upset(dane, nsets = 10) #zmniejszam liczbę zestawów do 10, żeby wykres był czytelniejszy
+```
+
