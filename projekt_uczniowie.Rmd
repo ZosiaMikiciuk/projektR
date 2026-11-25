@@ -82,7 +82,16 @@ rules <- validator(
   questions_correct >= 0 & questions_correct <= 100,
   time_management >= 0 & time_management <= 100,
   exam_anxiety_level >= 1 & exam_anxiety_level <= 10,
-  exam_score >= 0 & exam_score <= 100
+  exam_score >= 0 & exam_score <= 100,
+  parent_education %in% c("High School", "Bachelor", "Associate", "Master", "Doctorate"),
+  notes_quality %in% c("Excellent", "Average", "Poor")
+  
 )
+```
+
+```{r}
+cf <- confront(dane, rules, key = "student_id")
+barplot(cf)
+summary(cf)
 ```
 
