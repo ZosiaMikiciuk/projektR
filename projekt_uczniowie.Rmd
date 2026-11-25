@@ -66,13 +66,13 @@ library(errorlocate)
 rules <- validator(
   age >= 0 & age <= 25,
   previous_exam_score >= 0 & previous_exam_score <= 100,
-  previous_average >= 1 & previous_average <= 4,
-  attendance >= 0 & attendance <= 100,
-  assignment_completion >= 0 & assignment_completion <= 100,
-  study_hours >= 0 & study_hours <= 24,
-  self_study >= 0 & self_study <= 24,
-  online_learning >= 0 & online_learning <= 24,
-  practice_test_completed >= 0,
+  previous_gpa >= 1 & previous_gpa <= 4,
+  attendance_percentage >= 0 & attendance_percentage <= 100,
+  assignment_completion_rate >= 0 & assignment_completion_rate <= 100,
+  study_hours_per_day >= 0 & study_hours_per_day <= 24,
+  self_study_hours >= 0 & self_study_hours <= 24,
+  online_learning_hours >= 0 & online_learning_hours <= 24,
+  practice_tests_completed >= 0,
   sleep_hours >= 0 & sleep_hours <= 15,
   daily_screen_time >= 0 & daily_screen_time <= 24,
   physical_activity_hours >= 0 & physical_activity_hours <= 24,
@@ -80,11 +80,12 @@ rules <- validator(
   exam_preparation_days >= 0 & exam_preparation_days <= 40,
   questions_attempted >= 0 & questions_attempted <= 100,
   questions_correct >= 0 & questions_correct <= 100,
-  time_management >= 0 & time_management <= 100,
+  time_management_score >= 0 & time_management_score <= 100,
   exam_anxiety_level >= 1 & exam_anxiety_level <= 10,
   exam_score >= 0 & exam_score <= 100,
   parent_education %in% c("High School", "Bachelor", "Associate", "Master", "Doctorate"),
-  notes_quality %in% c("Excellent", "Average", "Poor")
+  notes_quality %in% c("Excellent", "Average", "Poor"),
+  sleep_quality %in% c("Fair", "Good", "Excellent", "Poor")
   
 )
 ```
@@ -93,5 +94,31 @@ rules <- validator(
 cf <- confront(dane, rules, key = "student_id")
 barplot(cf)
 summary(cf)
+```
+
+```{r}
+#zamienic spacje na NA parent_education oraz notes_quality z ifelse
+dane$parent_education <- ifelse(dane$parent_education == "", NA, dane$parent_education)
+dane$notes_quality <- ifelse(dane$notes_quality == "", NA, dane$notes_quality)
+dane$sleep_quality <- ifelse(dane$sleep_quality == "", NA, dane$sleep_quality)
+
+```
+
+
+```{r}
+#zamieniamy błedy na NA
+#dane_naprawione <- replace_errors(dane, rules)
+#sum(is.na(dane))
+#sum(is.na(dane_naprawione))
+
+```
+
+```{r}
+#write.csv(dane_naprawione, "dane_naprawione.csv", sep = ",")
+```
+
+```{r}
+#zadanie domowe
+#metody wypełnienia braków (z wykładu)
 ```
 
