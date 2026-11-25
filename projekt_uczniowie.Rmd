@@ -31,3 +31,29 @@ gg_miss_fct(dane, fct = gender) #rozkładam na czynniki pierwsze
 gg_miss_upset(dane, nsets = 10) #zmniejszam liczbę zestawów do 10, żeby wykres był czytelniejszy
 ```
 
+Założenia:
+-> age: większe niż 0 mniejsze niż 25
+-> gender: kobiety, mężczyźni, inni
+-> education level: podstawówki, liceum
+-> school type: 
+-> previus exam score: od 0 do 100
+-> poprzednie średnie: od 1 do 4 (są NA)
+-> attendance -> od 0 do 100%
+-> assignement completion -> od 0 do 100%
+-> study hours -> od 0 do 24 h
+-> self study -> od 0 do 24h
+-> nauka online -> od 0 do 24h 
+-> practise test completed -> od 0 
+-> godziny snu -> od 0 do 15 h
+-> daily screen time -> od 0 do 24h
+-> physical activity hours -> od 0 do 24h
+-> online course hours -> od 0 do 24 h
+-> exam preparation days -> od 0 do 40 
+-> questions atempted -> od 0 do 100
+-> question correct -> od 0 do 100
+-> time management -> od 0 do 100
+-> exam anxiety level -> 1 do 10
+-> exam score -> od 0 do 100%
+
+
+
