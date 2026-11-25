@@ -53,7 +53,7 @@ Założenia:
 -> question correct -> od 0 do 100
 -> time management -> od 0 do 100
 -> exam anxiety level -> 1 do 10
--> exam score -> od 0 do 100%
+-> exam score -> od 0 do 100% .
 
 
 
