@@ -55,5 +55,34 @@ Założenia:
 -> exam anxiety level -> 1 do 10
 -> exam score -> od 0 do 100% .
 
+```{r}
+library(validate)
+library(validatetools)
+library(dcmodify)
+library(errorlocate)
+```
 
+```{r}
+rules <- validator(
+  age >= 0 & age <= 25,
+  previous_exam_score >= 0 & previous_exam_score <= 100,
+  previous_average >= 1 & previous_average <= 4,
+  attendance >= 0 & attendance <= 100,
+  assignment_completion >= 0 & assignment_completion <= 100,
+  study_hours >= 0 & study_hours <= 24,
+  self_study >= 0 & self_study <= 24,
+  online_learning >= 0 & online_learning <= 24,
+  practice_test_completed >= 0,
+  sleep_hours >= 0 & sleep_hours <= 15,
+  daily_screen_time >= 0 & daily_screen_time <= 24,
+  physical_activity_hours >= 0 & physical_activity_hours <= 24,
+  online_course_hours >= 0 & online_course_hours <= 24,
+  exam_preparation_days >= 0 & exam_preparation_days <= 40,
+  questions_attempted >= 0 & questions_attempted <= 100,
+  questions_correct >= 0 & questions_correct <= 100,
+  time_management >= 0 & time_management <= 100,
+  exam_anxiety_level >= 1 & exam_anxiety_level <= 10,
+  exam_score >= 0 & exam_score <= 100
+)
+```
 
